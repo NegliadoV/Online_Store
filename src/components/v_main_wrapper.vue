@@ -1,31 +1,36 @@
 <template>
     <div class="v_main_wrapper">
-        {{ title }}
+        <v-catalog />
+        <v-cart v-if="CART.length" :cart_data="CART" />
     </div>
-
-    <v-catalog />
-    <v-crd />
 </template>
 
 <script>
+
 import vCatalog from './v_catalog.vue'
-import vCrd from './v_cart.vue'
+import vCart from './v_cart.vue'
+import { mapGetters } from 'vuex'
+
 export default {
 
     components: {
         vCatalog,
-        vCrd,
+        vCart,
     },
 
     props: {},
 
     data() {
         return {
-            title: "Hello wrapp"
+
         }
 
     },
-    computed: {},
+    computed: {
+        ...mapGetters([
+            'CART'
+        ]),
+    },
     methods: {},
     watch: {},
 
@@ -35,9 +40,9 @@ export default {
 
 <style lang="scss">
 .v_main_wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
 
 }
 </style>
