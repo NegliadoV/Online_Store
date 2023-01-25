@@ -1,4 +1,3 @@
-
 <template>
   <v-main-wrapper />
 </template>
@@ -6,7 +5,6 @@
 
 <script>
 import vMainWrapper from './components/v_main_wrapper.vue';
-
 export default {
   name: 'App',
   components: {

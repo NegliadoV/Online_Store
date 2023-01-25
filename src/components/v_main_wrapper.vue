@@ -1,21 +1,22 @@
 <template>
     <div class="v_main_wrapper">
-        <v-catalog />
-        <v-cart v-if="CART.length" :cart_data="CART" />
+        <router-view />
+        <!-- <v-catalog />
+        <v-cart v-if="CART.length" :cart_data="CART" /> -->
     </div>
 </template>
 
 <script>
 
-import vCatalog from './v_catalog.vue'
-import vCart from './v_cart.vue'
+// import vCatalog from './v_catalog.vue'
+// import vCart from './v_cart.vue'
 import { mapGetters } from 'vuex'
 
 export default {
 
     components: {
-        vCatalog,
-        vCart,
+        // vCatalog,
+        // vCart,
     },
 
     props: {},
